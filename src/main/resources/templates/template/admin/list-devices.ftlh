@@ -1,0 +1,3 @@
+<#macro listDe devices>
+
+</#macro>
