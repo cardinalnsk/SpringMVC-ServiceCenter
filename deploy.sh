@@ -14,7 +14,7 @@ if [ "$(docker ps -qa -f name=$CONTAINER_NAME)" ]; then
     fi
 fi
 
-docker run -d --rm -p 8000:8080 --name $CONTAINER_NAME -e DB_URL=${DB_URL} -e DB_USERNAME=${DB_USERNAME} -e DB_PASSWORD=${DB_PASSWORD} cardinalnsk/sc:latest
+docker run -d --rm -p 8000:8080 --name $CONTAINER_NAME -e DB_URL=${DB_URL} -e DB_USERNAME=${DB_USERNAME} -e DB_PASSWORD=${DB_PASSWORD} -e UPLOAD_PATH=${UPLOAD_PATH} cardinalnsk/sc:latest
 
 yes | docker image prune
 
