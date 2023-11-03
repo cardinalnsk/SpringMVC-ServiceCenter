@@ -39,6 +39,7 @@ jobs:
           DB_URL: ${{ secrets.DB_URL }}
           DB_USERNAME: ${{ secrets.DB_USERNAME }}
           DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          UPLOAD_PATH: ${{ secrets.UPLOAD_PATH }}
         run: mvn install
 
 
@@ -83,6 +84,7 @@ jobs:
             DB_URL=${{ secrets.DB_URL }}
             DB_USERNAME=${{ secrets.DB_USERNAME }}
             DB_PASSWORD=${{ secrets.DB_PASSWORD }}
+            UPLOAD_PATH: ${{ secrets.UPLOAD_PATH }}
           context: .
           file: Dockerfile
           push: true
