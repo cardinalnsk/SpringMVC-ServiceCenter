@@ -24,7 +24,6 @@ public class CustomUserDetails implements UserDetails {
         Set<Role> roles = user.getRoles();
         List<SimpleGrantedAuthority> authorities = new ArrayList<>();
         roles.forEach(role -> authorities.add(new SimpleGrantedAuthority(role.name())));
-
         return authorities;
     }
 
