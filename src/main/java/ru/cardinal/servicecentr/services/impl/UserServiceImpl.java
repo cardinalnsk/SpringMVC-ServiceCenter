@@ -13,12 +13,17 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
 
-    public boolean createUser(UserEntity user) {
+  public UserServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder) {
+    this.userRepository = userRepository;
+    this.passwordEncoder = passwordEncoder;
+  }
+
+  public boolean createUser(UserEntity user) {
         String username = user.getUsername();
         if (userRepository.findByUsername(username).isPresent()) return false;
         user.setUsername(username.toLowerCase());
