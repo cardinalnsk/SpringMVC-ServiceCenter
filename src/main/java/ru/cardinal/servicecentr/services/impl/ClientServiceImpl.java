@@ -1,6 +1,7 @@
 package ru.cardinal.servicecentr.services.impl;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import ru.cardinal.servicecentr.models.Client;
 import ru.cardinal.servicecentr.models.DeviceEntity;
@@ -11,6 +12,7 @@ import ru.cardinal.servicecentr.services.DeviceService;
 import java.util.List;
 
 @Service
+@Slf4j
 @RequiredArgsConstructor
 public class ClientServiceImpl implements ClientService {
     private final ClientRepo clientRepo;
